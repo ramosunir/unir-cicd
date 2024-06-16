@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    enviroment {
-        VENV_PATH = 'app'
-        FLASK_APP = 'api.py'
-    }
-
     stages {
         stage('Source Stage') {
             steps {
