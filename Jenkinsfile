@@ -1,5 +1,11 @@
 pipeline {
     agent any
+
+    enviroment {
+        VENV_PATH = 'app'
+        FLASK_APP = 'api.py'
+    }
+
     stages {
         stage('Source Stage') {
             steps {
@@ -9,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Stage'
-                sh 'make test-unit'
+                sh 'make build'
             }
         }
         stage('Unit tests') {
