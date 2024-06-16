@@ -21,13 +21,12 @@ pipeline {
         }
         stage('Notificacion correo') {
             steps {
-                mail bcc: '', body: 'Hello, This is an email from jenkins pipeline.', cc: '', from: '', replyTo: '', subject: 'EmailJenkinsPipeline', to: 'joel2064@gmail.com'
+                mail bcc: '', body: 'Hola, Esta es una notificacion de una ejecucion exitosa del proyecto en el jenkins pipeline.', cc: '', from: '', replyTo: '', subject: 'Notificacion de JenkinsPipeline', to: 'joel2064@gmail.com'
             }
         }
     }
     post {
         always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
             junit 'results/*_result.xml'
             cleanWs()
         }
