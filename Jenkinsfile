@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Notificacion correo') {
             steps {
-                mail bcc: '', body: 'Hello, This is an email from jenkins pipeline.', cc: '', from: '', replyTo: '', subject:​​ 'EmailJenkinsPipeline', to: 'joel2064@gmail.com'
+                mail bcc: '', body: 'Hello, This is an email from jenkins pipeline.', cc: '', from: '', replyTo: '', subject: 'EmailJenkinsPipeline', to: 'joel2064@gmail.com'
             }
         }
     }
